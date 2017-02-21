@@ -1,0 +1,13 @@
+[Unit]
+Description=Confluent Control Center
+After=network.target
+
+[Service]
+Type=simple
+User=confluent-cc
+Group=confluent-cc
+ExecStart=/usr/bin/control-center-start /etc/confluent-control-center/control-center.properties
+
+[Install]
+WantedBy=multi-user.target
+
