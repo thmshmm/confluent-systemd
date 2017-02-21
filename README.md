@@ -22,6 +22,7 @@ ZooKeeper properties: /etc/kafka/zookeeper.properties
 Log: /var/log/zookeeper/zookeeper.out
 
 JMX Port: 10020
+
 JMX is enabled by default. To disable JXM remove the "Environment=" line.
 
 The service routes all standard output into the specified log.
