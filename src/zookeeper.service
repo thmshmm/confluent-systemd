@@ -7,7 +7,7 @@ Type=simple
 User=zookeeper
 Group=zookeeper
 Environment="KAFKA_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=10020 -Dcom.sun.management.jmxremote.local.only=true -Dcom.sun.management.jmxremote.authenticate=false"
-ExecStart=/bin/sh -c '/usr/bin/zookeeper-server-start /etc/kafka/zookeeper.properties 2>&1 > /var/log/zookeeper/zookeeper.out'
+ExecStart=/bin/sh -c '/usr/bin/zookeeper-server-start /etc/kafka/zookeeper.properties 2>&1 >> /var/log/zookeeper/zookeeper.out'
 ExecStop=/usr/bin/zookeeper-server-stop
 
 [Install]
