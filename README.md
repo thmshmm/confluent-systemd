@@ -37,6 +37,7 @@ JMX is enabled by default. To disable JXM remove the "Environment=" line.
 
 ## Kafka
 ZooKeeper properties: /etc/kafka/zookeeper.properties
+
 Logs: /var/log/zookeeper
 
 JMX Port: 10030
@@ -44,6 +45,7 @@ JMX Port: 10030
 ## ZooKeeper
 
 ZooKeeper properties: /etc/kafka/zookeeper.properties
+
 Logs: /var/log/zookeeper
 
 JMX Port: 10020
