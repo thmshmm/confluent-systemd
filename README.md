@@ -1,12 +1,10 @@
 # systemd services for Confluent Platform
 Collection of systemd services which can be used to manage kafka, zookeeper, ...
 
-Currently available for:
+Available for:
 - Kafka
 - Kafka Connect
 - ZooKeeper
-
-Up next:
 - Confluent Control Center
 
 # Prerequisites
@@ -28,8 +26,14 @@ log4j.appender.kafkaConnectAppender.layout=org.apache.log4j.PatternLayout
 log4j.appender.kafkaConnectAppender.layout.ConversionPattern=[%d] %p %m (%c)%n
 ```
 
+## Confluent Control Center
+
+For logging into files, rename log4j-rolling.properties to log4j.properties.
+
+By default Control Center will log to /tmp. To change, set the paths in log4j.properties after renaming.
+
 ## Users, groups and directories
-- Create the users and group: kafka, zookeeper
+- Create the users and group: kafka, zookeeper, confluent-cc
 - Create directories: /var/log/kafka, /var/log/zookeeper
 - Set appropriate permissions
 
