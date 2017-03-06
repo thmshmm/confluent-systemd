@@ -7,7 +7,7 @@ Type=simple
 User=kafka
 Group=kafka
 Environment="KAFKA_JMX_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=10030 -Dcom.sun.management.jmxremote.local.only=true -Dcom.sun.management.jmxremote.authenticate=false"
-Environment="KAFKA_OPTS=-Dkafka.logs.dir=/var/log/kafka"
+Environment="LOG_DIR=/var/log/kafka"
 ExecStart=/usr/bin/kafka-server-start /etc/kafka/server.properties
 ExecStop=/usr/bin/kafka-server-stop
 

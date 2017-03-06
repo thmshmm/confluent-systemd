@@ -7,7 +7,7 @@ Type=simple
 User=zookeeper
 Group=zookeeper
 Environment="KAFKA_JMX_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=10020 -Dcom.sun.management.jmxremote.local.only=true -Dcom.sun.management.jmxremote.authenticate=false"
-Environment="KAFKA_OPTS=-Dkafka.logs.dir=/var/log/zookeeper"
+Environment="LOG_DIR=/var/log/zookeeper"
 ExecStart=/usr/bin/zookeeper-server-start /etc/kafka/zookeeper.properties
 ExecStop=/usr/bin/zookeeper-server-stop
 
