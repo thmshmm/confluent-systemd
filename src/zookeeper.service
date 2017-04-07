@@ -1,16 +1,15 @@
 [Unit]
-Description=Apache ZooKeeper
-After=network.target
+Description=Confluent ZooKeeper
+After=network.target remote-fs.target
 
 [Service]
-Type=simple
+Type=forking
 User=zookeeper
 Group=zookeeper
 Environment="KAFKA_JMX_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=10020 -Dcom.sun.management.jmxremote.local.only=true -Dcom.sun.management.jmxremote.authenticate=false"
 Environment="LOG_DIR=/var/log/zookeeper"
-ExecStart=/usr/bin/zookeeper-server-start /etc/kafka/zookeeper.properties
+ExecStart=/usr/bin/zookeeper-server-start -daemon /etc/kafka/zookeeper.properties
 ExecStop=/usr/bin/zookeeper-server-stop
 
 [Install]
 WantedBy=multi-user.target
-
