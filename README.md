@@ -46,6 +46,18 @@ For auto restart of these services use:
 ```
 systemctl enable servicename.service
 ```
+
+# Additional settings
+Some Apache Kafka settings are set via JVM parameters and environment variables. For example security settings or log paths.
+
+To add environment parameters for systemd services "Environment" entries can be added to the "Service" section of a service. As an example the following line can be added to specify the path to the jaas configuration file needed to enable Kerberos for authentication.
+
+```
+Environment="KAFKA_OPTS=-Djava.security.auth.login.config=/etc/kafka/kafka-jaas.conf"
+```
+
+More information about Apache Kafka settings and environment variables can be found in the official documentation.
+
 # Summary
 JMX is enabled by default. To disable JXM remove the "Environment=" line.
 
