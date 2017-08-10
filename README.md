@@ -2,6 +2,7 @@
 
 Available for:
 - Confluent Kafka
+- Confluent Schema Registry
 - Confluent Kafka Connect
 - Confluent ZooKeeper
 - Confluent Control Center
@@ -53,6 +54,10 @@ JMX is enabled by default. To disable JXM remove the "Environment=" line.
 Kafka properties: /etc/kafka/server.properties </br>
 Logs: /var/log/kafka </br>
 JMX Port: 10030
+
+## Confluent Schema Registry
+Schema Registry properties: /etc/schema-registry/schema-registry.properties </br>
+JMX Port: 10050
 
 ## Confluent Kafka Connect
 Kafka Connect properties: /etc/kafka/connect-distributed.properties </br>

@@ -1,6 +1,6 @@
 [Unit]
 Description=Apache Kafka Connect
-After=network.target
+After=network.target kafka.service schema-registry.service
 
 [Service]
 Type=simple
