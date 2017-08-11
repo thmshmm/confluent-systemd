@@ -8,6 +8,8 @@ User=kafka
 Group=kafka
 Environment="KAFKA_JMX_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=10030 -Dcom.sun.management.jmxremote.local.only=true -Dcom.sun.management.jmxremote.authenticate=false"
 Environment="LOG_DIR=/var/log/kafka"
+# Uncomment the following line to enable authentication for the broker
+# Environment="KAFKA_OPTS=-Djava.security.auth.login.config=/etc/kafka/kafka-jaas.conf"
 ExecStart=/usr/bin/kafka-server-start -daemon /etc/kafka/server.properties
 ExecStop=/usr/bin/kafka-server-stop
 
