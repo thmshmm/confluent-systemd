@@ -1,0 +1,15 @@
+[Unit]
+Description=Confluent Schema Registry
+After=network.target remote-fs.target kafka.service
+
+[Service]
+Type=forking
+User=kafka
+Group=kafka
+Environment="KAFKA_JMX_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=10050 -Dcom.sun.management.jmxremote.local.only=true -Dcom.sun.management.jmxremote.authenticate=false"
+Environment="LOG_DIR=/var/log/kafka"
+ExecStart=/usr/bin/schema-registry-start -daemon /etc/schema-registry/schema-registry.properties
+ExecStop=/usr/bin/schema-registry-stop
+
+[Install]
+WantedBy=multi-user.target
