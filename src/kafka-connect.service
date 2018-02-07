@@ -3,13 +3,12 @@ Description=Apache Kafka Connect
 After=network.target kafka.service schema-registry.service
 
 [Service]
-Type=simple
+Type=forking
 User=kafka
 Group=kafka
 Environment="KAFKA_JMX_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=10040 -Dcom.sun.management.jmxremote.local.only=true -Dcom.sun.management.jmxremote.authenticate=false"
 Environment="KAFKA_OPTS=-Dkafka.logs.dir=/var/log/kafka"
-ExecStart=/usr/bin/connect-distributed /etc/kafka/connect-distributed.properties
+ExecStart=/usr/bin/connect-distributed -daemon /etc/kafka/connect-distributed.properties
 
 [Install]
 WantedBy=multi-user.target
-
