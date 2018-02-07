@@ -8,6 +8,8 @@ User=zookeeper
 Group=zookeeper
 Environment="KAFKA_JMX_OPTS=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=10020 -Dcom.sun.management.jmxremote.local.only=true -Dcom.sun.management.jmxremote.authenticate=false"
 Environment="LOG_DIR=/var/log/zookeeper"
+# Uncomment the following line to enable authentication for the zookeeper
+# Environment="KAFKA_OPTS=-Djava.security.auth.login.config=/etc/kafka/zookeeper_server_jaas.conf -Djava.security.krb5.conf=/etc/krb5.conf"
 ExecStart=/usr/bin/zookeeper-server-start -daemon /etc/kafka/zookeeper.properties
 ExecStop=/usr/bin/zookeeper-server-stop
 
