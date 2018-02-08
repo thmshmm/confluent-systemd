@@ -12,6 +12,7 @@ Environment="LOG_DIR=/var/log/zookeeper"
 # Environment="KAFKA_OPTS=-Djava.security.auth.login.config=/etc/kafka/zookeeper_server_jaas.conf -Djava.security.krb5.conf=/etc/krb5.conf"
 ExecStart=/usr/bin/zookeeper-server-start -daemon /etc/kafka/zookeeper.properties
 ExecStop=/usr/bin/zookeeper-server-stop
+SuccessExitStatus=143
 
 [Install]
 WantedBy=multi-user.target

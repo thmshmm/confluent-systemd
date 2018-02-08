@@ -12,6 +12,7 @@ Environment="LOG_DIR=/var/log/kafka"
 # Environment="KAFKA_OPTS=-Djava.security.auth.login.config=/etc/kafka/kafka-jaas.conf -Djava.security.krb5.conf=/etc/krb5.conf"
 ExecStart=/usr/bin/kafka-server-start -daemon /etc/kafka/server.properties
 ExecStop=/usr/bin/kafka-server-stop
+SuccessExitStatus=143
 
 [Install]
 WantedBy=multi-user.target
