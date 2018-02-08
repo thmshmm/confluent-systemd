@@ -1,6 +1,6 @@
 [Unit]
 Description=Confluent ZooKeeper
-After=network.target remote-fs.target
+After=network.target network-online.target remote-fs.target
 
 [Service]
 Type=forking

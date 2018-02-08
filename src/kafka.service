@@ -1,6 +1,6 @@
 [Unit]
 Description=Confluent Kafka Broker
-After=network.target remote-fs.target zookeeper.service
+After=network.target network-online.target remote-fs.target zookeeper.service
 
 [Service]
 Type=forking
